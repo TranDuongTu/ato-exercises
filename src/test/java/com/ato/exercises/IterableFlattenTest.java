@@ -16,9 +16,9 @@ public class IterableFlattenTest {
     input.add(Arrays.asList(1, 2, 3));
     input.add(Collections.<Integer> emptyList());
     input.add(Arrays.asList(4, 5, 6));
-    final Iterable<Integer> result = IterableFlatten.flatten(input);
+    final Iterable<? extends Integer> result = IterableFlatten.flatten(input);
 
-    final Iterator<Integer> iter = result.iterator();
+    final Iterator<? extends Integer> iter = result.iterator();
     final List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6);
     final List<Integer> actual = new ArrayList<>();
     while (iter.hasNext()) {
