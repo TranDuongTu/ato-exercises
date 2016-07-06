@@ -1,13 +1,12 @@
-package com.ato.exercises;
+package com.ato.exercises.flatten_iterables;
 
-import com.ato.exercises.IterableFlatten.NestedElement;
 import com.ato.exercises.utils.Colls;
 import org.junit.Test;
 
 import java.util.*;
 
-import static com.ato.exercises.IterableFlatten.flattenElements;
-import static com.ato.exercises.IterableFlatten.flattenNestedElements;
+import static com.ato.exercises.flatten_iterables.IterableFlatten.flattenElements;
+import static com.ato.exercises.flatten_iterables.IterableFlatten.flattenNestedElements;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
