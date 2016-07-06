@@ -39,9 +39,8 @@ public final class IterableFlatten {
   }
 
   private static <T> Iterator<T> concatIterators(final Iterator<? extends Iterator<? extends T>> input) {
-    return new Iterator<T>() {
+    return new UnmodifiableIterator<T>() {
       private Iterator<? extends T> current = new EmptyIterator<>();
-      private Iterator<? extends T> removeCurrent;
 
       @Override
       public boolean hasNext() {
@@ -57,14 +56,7 @@ public final class IterableFlatten {
         if (!hasNext()) {
           throw new NoSuchElementException();
         }
-        removeCurrent = current;
         return current.next();
-      }
-
-      @Override
-      public void remove() {
-        assert removeCurrent != null : "Never call next() before remove()";
-        removeCurrent.remove();
       }
     };
   }
